@@ -1,4 +1,4 @@
-const { pizzas: { getBurgers } } = require('../controllers')
+const { burgers: { getBurgers } } = require('../controllers')
 
 module.exports = app => {
   app.get('/', (req, res) => {
