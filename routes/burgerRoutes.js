@@ -7,6 +7,7 @@ const {
   }
 } = require('../controllers')
 
+
 module.exports = app => {
   // GET all burgers
   app.get('/burgers', (req, res) => {
@@ -32,6 +33,11 @@ module.exports = app => {
   // DELETE one burger
   app.delete('/burgers/:id', (req, res) => {
     removeBurger(parseInt(req.params.id), () => {
+      res.sendStatus(200)
+    })
+
+    app.post(`/init`, (req, res) => {
+      init()
       res.sendStatus(200)
     })
   })

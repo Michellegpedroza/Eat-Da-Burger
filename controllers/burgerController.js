@@ -27,7 +27,7 @@ module.exports = {
       cb()
     })
   },
-  
+
   removeBurger(id, cb) {
     db.query(`DELETE FROM burger WHERE id = ${id}`, e => {
       if (e) {
@@ -35,5 +35,29 @@ module.exports = {
       }
       cb()
     })
+  }
+  init() {
+    db.query(`
+    DROP DATABASE IF EXISTS burgers_db;
+
+    CREATE DATABASE burgers_db;
+
+    USE burgers_db;
+
+    CREATE TABLE burger(
+      id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+      name VARCHAR(255) NOT NULL,
+      eaten BOOLEAN NOT NULL DEFAULT 0
+    );
+
+    USE burgers_db;
+
+    INSERT INTO burger (name, eaten)
+    VALUES ('American Burger', false),
+          ('Cheese Burger', false),
+          ('Veggie Burger', true),
+          ('Grilled Chicken Burger', false),
+          ('Crispy Chicken Burger', true);
+    `)
   }
 }
