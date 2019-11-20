@@ -35,10 +35,5 @@ module.exports = app => {
     removeBurger(parseInt(req.params.id), () => {
       res.sendStatus(200)
     })
-
-    app.post(`/init`, (req, res) => {
-      init()
-      res.sendStatus(200)
-    })
   })
 }
