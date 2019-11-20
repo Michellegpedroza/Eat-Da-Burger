@@ -9,6 +9,7 @@ module.exports = {
       cb(burgers)
     })
   },
+
   addBurger(name, eaten, cb) {
     db.query(`INSERT INTO burger (name, eaten) VALUES ("${name}", ${eaten})`, e => {
       if (e) {
@@ -17,6 +18,7 @@ module.exports = {
       cb()
     })
   },
+
   eatBurger(id, cb) {
     db.query(`UPDATE burger SET eaten = true WHERE id = ${id}`, e => {
       if (e) {
@@ -25,6 +27,7 @@ module.exports = {
       cb()
     })
   },
+  
   removeBurger(id, cb) {
     db.query(`DELETE FROM burger WHERE id = ${id}`, e => {
       if (e) {

@@ -42,10 +42,10 @@ document.getElementById('addBurger').addEventListener('click', e => {
 
 document.addEventListener('click', e => {
   if (e.target.parentNode.className.includes('eatBurger')) {
-    eatburger(e.target.parentNode.dataset.burger)
+    eatBurger(e.target.parentNode.dataset.burger)
     window.location.reload()
   } else if (e.target.parentNode.className.includes('removeBurger')) {
-    removeburger(e.target.parentNode.dataset.burger)
+    removeBurger(e.target.parentNode.dataset.burger)
     window.location.reload()
   }
 })
