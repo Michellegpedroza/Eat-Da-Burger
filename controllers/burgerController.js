@@ -38,11 +38,11 @@ module.exports = {
   }
   init() {
     db.query(`
-    DROP DATABASE IF EXISTS burgers_db;
+    DROP DATABASE IF EXISTS q6ym1nfptvd3msuk;
 
-    CREATE DATABASE burgers_db;
+    CREATE DATABASE q6ym1nfptvd3msuk;
 
-    USE burgers_db;
+    USE q6ym1nfptvd3msuk;
 
     CREATE TABLE burger(
       id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -50,7 +50,7 @@ module.exports = {
       eaten BOOLEAN NOT NULL DEFAULT 0
     );
 
-    USE burgers_db;
+    USE q6ym1nfptvd3msuk;
 
     INSERT INTO burger (name, eaten)
     VALUES ('American Burger', false),
