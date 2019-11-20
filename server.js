@@ -15,4 +15,4 @@ app.set('view engine', '.hbs')
 require('./routes')(app)
 
 //listen to a port
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
